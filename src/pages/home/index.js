@@ -15,8 +15,8 @@ function Index() {
 
     return (
         <Container>
-            <Node title={'Chain4u 1'} url={"http://5.161.43.248:8080"} officialData={data}/>
-            <Node title={'Chain4u 2'} url={"http://138.201.245.166:8080"} officialData={data}/>
+            <Node title={'Chain4u 1'} url={"/api/node1"} officialData={data}/>
+            <Node title={'Chain4u 2'} url={"/api/node2"} officialData={data}/>
 
         </Container>
     );

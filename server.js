@@ -4,6 +4,15 @@ require('dotenv').config();
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
+const bodyParser = require('body-parser');
+const proxy = require('express-http-proxy');
+const cors = require('cors');
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(cors());
+
+app.use('/api/node1', proxy("http://node1.chain4u.io:8080"));
+app.use('/api/node2', proxy("http://node2.chain4u.io:8080"));
 
 app.use(express.static(__dirname + '/build'));
 
